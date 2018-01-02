@@ -1,25 +1,26 @@
-import {Component} from '@angular/core';
+import {Component,Input,Output,EventEmitter} from '@angular/core';
 
 @Component({
     selector:'my-tutorial',
     template:`
     <h2>{{title}}</h2>
-    <h3 *ngIf="showLineIf">This ngIf directive line.</h3>
-    <div [ngSwitch]="color">
-        <p *ngSwitchCase="'red'">This line color is red</p>
-        <p *ngSwitchCase="'blue'">This line color is blue</p>
-        <p *ngSwitchCase="'green'">This line color is green</p>
-        <p *ngSwitchDefault>Invalid color</p>
-    </div>
-    <ul>
-        <li *ngFor="let color of colors">{{color}}</li>
-    </ul>
+    <p>Child component: {{name}}</p>
+    <button [disabled]="voted" (click)="vote(true)">Agree</button>
+    <button [disabled]="voted" (click)="vote(false)">Disgree</button>
+    Result: {{voted}}
     `
 })
-export class TutorialComponent{
-    public showLineIf = false;
+export class TutorialComponent {
+    @Input() name:string;
 
-    public color = "blue";
+    @Output() onVote = new EventEmitter<boolean>();
+    public voted:boolean =false;
 
-    public colors: string[] = ["red","green","blue"];
+    setName(name:string){
+        this.name = name;
+    }
+    vote(agree:boolean){
+        this.voted = true;
+        this.onVote.emit(agree);
+    }
 }
