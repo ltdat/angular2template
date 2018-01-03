@@ -12,6 +12,7 @@ var app_component_1 = require("./app.component");
 var forms_1 = require("@angular/forms");
 var employee_component_1 = require("./employee.component");
 var home_component_1 = require("./home.component");
+var notfound_component_1 = require("./notfound.component");
 var employee_service_1 = require("./services/employee.service");
 var http_1 = require("@angular/http");
 var common_1 = require("@angular/common");
@@ -25,7 +26,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 employee_component_1.EmployeeListComponent,
-                home_component_1.HomeComponent
+                home_component_1.HomeComponent,
+                notfound_component_1.NotFoundComponent
             ],
             providers: [
                 employee_service_1.EmployeeService,
