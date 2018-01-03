@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "noStrictGenericChecks":true,
+    "lib": ["es2017", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,

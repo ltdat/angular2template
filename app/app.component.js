@@ -10,13 +10,10 @@ var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
-    AppComponent.prototype.onSubmit = function (value) {
-        console.log(value);
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: "app/app.component.html",
+            templateUrl: 'app/app.component.html',
         })
     ], AppComponent);
     return AppComponent;
