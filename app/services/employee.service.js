@@ -5,23 +5,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 var EmployeeService = /** @class */ (function () {
-    function EmployeeService() {
+    function EmployeeService(_http) {
+        this._http = _http;
+        this.apiUrl = "https://5a4cf4782f76010012c282a7.mockapi.io/api/employees";
     }
     EmployeeService.prototype.GetList = function () {
-        var employees = [
-            { Id: 1, Name: "Le Tien Dat" },
-            { Id: 2, Name: "Nguyen Van Phuc" },
-            { Id: 3, Name: "Hoang Nghia Quyen" },
-            { Id: 4, Name: "Vu Xuan Thien" },
-            { Id: 5, Name: "Dang Manh Tuong" }
-        ];
-        return employees;
+        return this._http.get(this.apiUrl).map(function (respone) { return respone.json(); });
     };
     EmployeeService = __decorate([
-        core_1.Injectable()
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
     ], EmployeeService);
     return EmployeeService;
 }());
