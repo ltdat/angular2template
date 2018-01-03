@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "noStrictGenericChecks":true,
+    "lib": ["es2017", "dom"],
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
