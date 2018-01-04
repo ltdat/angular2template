@@ -6,6 +6,8 @@ import { EmployeeListComponent } from './employee.component'
 import { HomeComponent } from './home.component';
 import{NotFoundComponent} from './notfound.component';
 import{EmployeeDetailComponent} from './employee.detail.component';
+import { EmployeeOverviewComponent } from './employee-overview.component';
+import { EmployeeProjectsComponent } from './employee-projects.component';
 import { EmployeeService } from './services/employee.service';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,6 +21,8 @@ import { appRoutes } from './app.route';
     EmployeeListComponent,
     HomeComponent,
     NotFoundComponent,
+    EmployeeProjectsComponent,
+    EmployeeOverviewComponent,
     EmployeeDetailComponent
   ],
   providers:

@@ -18,10 +18,10 @@ var EmployeeService = /** @class */ (function () {
         this.apiUrl = "https://5a4cf4782f76010012c282a7.mockapi.io/api/employees";
     }
     EmployeeService.prototype.GetList = function () {
-        return this._http.get(this.apiUrl).map(function (respone) { return respone.json(); });
+        return this._http.get(this.apiUrl).map(function (response) { return response.json(); });
     };
     EmployeeService.prototype.GetSingle = function (id) {
-        return this._http.get(this.apiUrl + id).map(function (response) { return response.json(); });
+        return this._http.get(this.apiUrl + "/" + id).map(function (response) { return response.json(); });
     };
     EmployeeService = __decorate([
         core_1.Injectable(),
